@@ -1,5 +1,5 @@
 
-// create the module and name it scotchApp
+// create the module and the app
     // no routes are needed 
 var app = angular.module('myApp', []);
 
