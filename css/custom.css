@@ -1,0 +1,13 @@
+.form-control.conversation{
+	overflow:auto;
+	height:120px;
+}
+span.message-content{
+	float:left;
+}
+span.message-date{
+	float:right;
+}
+.message-container{
+	width:100%;
+}

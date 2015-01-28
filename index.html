@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <title>Hello world Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="helloworld,minichat">
+    <meta name="author" content="Wandrille Verlut">
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <!-- SPELLS -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+
+    <!-- HEADER  -->
+    <header>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>Hello World Chat</h1>
+			</div>
+		</div>
+    </header>
+
+    <!-- MAIN CONTENT AND INJECTED VIEW -->
+    <div class="container" ng-controller="MainCtrl">
+		<div class="row">
+			<div class="col-md-6" ng-repeat="user in userList">
+				<h2>{{user.name}}</h2>
+				<form role="form" name="conversationForm" id="conversationForm">
+					<fieldset>
+						<div class="form-group">
+							<label for="conversation">Conversation</label> 
+							<div class="form-control conversation" name="conversation" id="conversationA">
+						        <div class="message-container" ng-repeat="message in user.messageList">
+						        	<span class="message-content"><b>{{message.sender}}: </b>{{message.messageContent}}</span>
+						        	<span class="message-date">{{message.sendingTimeFormatted}}</span>
+						        	<br/>
+						        </div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="messageContent">Nouveau message : </label>
+							<input class="form-control" id="messageContent" name="messageContent" ng-model="newMessage.messageContent" placeholder="Un message à envoyer?" required />
+						</div>
+						<button type="button" class="btn btn-primary" ng-disabled="conversationForm.$invalid" ng-click="sendMessage(newMessage, user.name)"><i class="fa fa-paper-plane"></i> Envoyer</button>
+					</fieldset>
+				</form>
+			</div>			
+		</div>
+	</div>
+</body>
+</html>
