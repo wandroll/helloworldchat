@@ -18,7 +18,7 @@ describe('MainCtrl', function(){
 	it('should add new messages to users message lists', function() {
 		controller("MainCtrl", {$scope: scope});
 		var m = newMessage ("Someone", "SomethingToSay");
-		expect(m.sender.toEqual("SomethingToSay");
+		expect(m.sender).toEqual("SomethingToSay");
 	});
 
 	describe('NewMessage', function(){
