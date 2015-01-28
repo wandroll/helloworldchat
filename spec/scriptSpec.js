@@ -9,7 +9,7 @@ describe('MainCtrl', function(){
 		controller = $controller;
 	}));
 
-	it('should create "UserList" model with 2 users', function() {
+	it('should create a UserList model with 2 users', function() {
 		controller("MainCtrl", {$scope: scope});
 		expect(scope.userList.length).toBe(2);
 	});
