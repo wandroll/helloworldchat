@@ -22,13 +22,12 @@ app.controller('MainCtrl', function($scope) {
             $scope.userList[0].messageList.push( newMessage (username, messageContent));
         }
     }
-
+});
     //creates a new message
     function newMessage (sender, messageContent){
         var sendingTime = new Date(),
             sendingTimeFormatted = sendingTime.getHours()+':'+sendingTime.getMinutes()+':'+sendingTime.getSeconds();
         return({sender:sender, messageContent: messageContent, sendingTimeFormatted: sendingTimeFormatted});
     }
-});
 
 
