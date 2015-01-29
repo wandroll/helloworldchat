@@ -12,14 +12,14 @@ app.controller('MainCtrl', function($scope) {
     }];
 
 
-    $scope.sendMessage = function(m, username){
+    $scope.sendMessage = function(messageContent, username){
         if (username === "User A" ){
-            $scope.userList[0].messageList.push( newMessage ("Moi", m.messageContent));
-            $scope.userList[1].messageList.push( newMessage (username, m.messageContent));
+            $scope.userList[0].messageList.push( newMessage ("Moi", messageContent));
+            $scope.userList[1].messageList.push( newMessage (username, messageContent));
         }
         else{
-            $scope.userList[1].messageList.push( newMessage ("Moi", m.messageContent));
-            $scope.userList[0].messageList.push( newMessage (username, m.messageContent));
+            $scope.userList[1].messageList.push( newMessage ("Moi", messageContent));
+            $scope.userList[0].messageList.push( newMessage (username, messageContent));
         }
     }
 
