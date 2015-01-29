@@ -1,28 +1,29 @@
-describe('MainCtrl', function(){
+'use strict';
+
+describe("MainCtrl", function(){
 
 	beforeEach(module("app"));
-	var scope,
-	controller;
+	var scope, controller;
 
 	beforeEach(inject(function ($rootScope, $controller) {
 		scope = $rootScope.$new();
 		controller = $controller;
 	}));
 
-	it('should create "UserList" model with 2 users', function() {
+	it("should create UserList model with 2 users", function() {
 		controller("MainCtrl", {$scope: scope});
 		expect(scope.userList.length).toBe(2);
 	});
 
-	describe('SendMessage', function(){
-	it('should add new messages to users message lists', function() {
+	describe("SendMessage", function(){
+	it("should add new messages to users message lists", function() {
 		controller("MainCtrl", {$scope: scope});
 		var m = newMessage ("Someone", "SomethingToSay");
-		expect(m.sender.toEqual("SomethingToSay");
+		expect(m.sender).toEqual("SomethingToSay");
 	});
 
-	describe('NewMessage', function(){
-	it('should return a new message', function() {
+	describe("NewMessage", function(){
+	it("should return a new message", function() {
 		controller("MainCtrl", {$scope: scope});
 		var m1 = $scope.sendMessage ("Someone", "SomethingToSay");
 		expect($scope.userList[0].messageList.length).toBe(1);
