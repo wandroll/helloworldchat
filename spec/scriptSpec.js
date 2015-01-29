@@ -1,6 +1,6 @@
 describe('MainCtrl', function(){
 
-	beforeEach(module("app"));
+	beforeEach(module("myApp"));
 	var scope,
 	controller;
 
