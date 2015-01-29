@@ -17,23 +17,26 @@ describe("MainCtrl", function(){
 		expect(scope.userList.length).toBe(2);
 	});
 
-	describe("SendMessage", function(){
-	it("should add new messages to users message lists", function() {
-		controller("MainCtrl", {$scope: scope});
-		var m = newMessage ("Someone", "SomethingToSay");
-		expect(m.sender).toEqual("Someone");
-		expect(m.messageContent).toEqual("SomethingToSay");
-	});
 
 	describe("NewMessage", function(){
-	it("should return a new message", function() {
-		controller("MainCtrl", {$scope: scope});
-		var m1 = $scope.sendMessage ("Someone", "SomethingToSay");
-		expect($scope.userList[0].messageList.length).toBe(1);
-		expect($scope.userList[1].messageList.length).toBe(1);
-		var m2 = $scope.sendMessage ("SomeoneElse", "SomethingElseToSay");
-		expect($scope.userList[0].messageList.length).toBe(2);
-		expect($scope.userList[1].messageList.length).toBe(2);
+		it("should return a new message", function() {
+			controller("MainCtrl", {$scope: scope});
+			var m = newMessage ("Someone", "SomethingToSay");
+			expect(m.sender).toEqual("Someone");
+			expect(m.messageContent).toEqual("SomethingToSay");
+		});
 	});
 
+	describe("SendMessage", function(){
+
+		it("should add new messages to users message lists", function() {
+			controller("MainCtrl", {$scope: scope});
+			var m1 = $scope.sendMessage ("Someone", "SomethingToSay");
+			expect($scope.userList[0].messageList.length).toBe(1);
+			expect($scope.userList[1].messageList.length).toBe(1);
+			var m2 = $scope.sendMessage ("SomeoneElse", "SomethingElseToSay");
+			expect($scope.userList[0].messageList.length).toBe(2);
+			expect($scope.userList[1].messageList.length).toBe(2);
+		});
+	});
 });
