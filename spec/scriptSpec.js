@@ -2,15 +2,17 @@
 
 describe("MainCtrl", function(){
 
-	beforeEach(module("app"));
-	var scope, controller;
+	beforeEach(module("myApp"));
+	var scope,
+	controller;
 
 	beforeEach(inject(function ($rootScope, $controller) {
 		scope = $rootScope.$new();
 		controller = $controller;
 	}));
 
-	it("should create UserList model with 2 users", function() {
+
+	it('should create a UserList model with 2 users', function() {
 		controller("MainCtrl", {$scope: scope});
 		expect(scope.userList.length).toBe(2);
 	});

@@ -1,7 +1,7 @@
 
 // create the module and the app
     // no routes are needed 
-var app = angular.module('app', []);
+var app = angular.module('myApp', []);
 
 // create the controller and inject Angular's $scope
 app.controller('MainCtrl', function($scope) {
